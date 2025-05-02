@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Problemas para Conectar - MisterVPN</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #101026, #1a1a35);
+      color: #f0f0f5;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+      animation: fadeIn 0.8s ease-out;
+    }
+    header {
+      text-align: center;
+      padding: 30px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    header h1 {
+      font-size: 2.4rem;
+      color: #ffd600;
+      margin-bottom: 10px;
+      animation: slideInDown 0.6s ease-out;
+    }
+    header p {
+      font-size: 1rem;
+      color: #ccc;
+    }
+    figure {
+      margin: 40px 0;
+      text-align: center;
+      animation: zoomIn 0.8s ease-out;
+    }
+    figure img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+    }
+    figure figcaption {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    .highlight {
+      background: #ffd600;
+      color: #000;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    section h2 {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      color: #00bfff;
+      margin-bottom: 12px;
+    }
+    section h2 i {
+      margin-right: 8px;
+      font-size: 1.6rem;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li {
+      background: rgba(255,255,255,0.05);
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1rem;
+    }
+    .copyable {
+      cursor: pointer;
+      font-weight: 600;
+      color: #ffd600;
+    }
+    .copyable:hover {
+      text-decoration: underline;
+    }
+    .btn-free {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #00bfff;
+      color: #000;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s;
+      margin-bottom: 16px;
+    }
+    .btn-free:hover {
+      background: #029cd6;
+    }
+    .btn-free i {
+      font-size: 1.2rem;
+    }
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9rem;
+      color: #777;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      margin-top: 20px;
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes zoomIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="bi bi-exclamation-triangle"></i> Problemas para Conectar?</h1>
+      <p>Entenda rapidamente como resolver quando sua VPN não conecta.</p>
+    </header>
+    <figure>
+      <img src="https://i.postimg.cc/XYHxKV56/IMG-20250502-113500.jpg" alt="Notificação Sem Internet">
+      <figcaption>Notificação de "Sem internet" mantendo conexão oculta.</figcaption>
+    </figure>
+    <section>
+      <p>Quando seu pacote de dados se esgota ou você fica sem crédito, normalmente o sistema exibe a notificação <strong>"Sem internet"</strong> no aparelho. Isso significa que a internet foi bloqueada, mas a operadora mantém alguns kbs ativos para serviços essenciais e notificações. A VPN aproveita essa abertura para criar um túnel criptografado e continuar transmitindo dados, mesmo com o bloqueio parcial.</p>
+      <p class="highlight">OBSERVAÇÃO IMPORTANTE</p><p>Se nem a notificação de “Sem internet” aparecer, a operadora encerrou totalmente toda a conexão de dados, sem deixar nenhuma porta livre. Nesse cenário, a VPN não consegue nem estabelecer o túnel básico, tornando impossível conectar. Siga as opções abaixo para tentar restaurar essa abertura.</p>
+    </section>
+    <section>
+      <h2><i class="bi bi-gear"></i> Configurar APN</h2>
+      <ul>
+        <li>Nome: <span class="copyable" data-copy="MVTUNNEL">MVTUNNEL</span></li>
+        <li>APN: <span class="copyable" data-copy="smart.m2m.vivo.com.br">smart.m2m.vivo.com.br</span></li>
+        <li>Usuário/Senha: <span class="copyable" data-copy="vivo">vivo</span></li>
+        <li>Proxy/Porta: Não definido</li>
+        <li>Auth: PAP/CHAP</li>
+        <li>Protocolo: IPv4</li>
+      </ul>
+    </section>
+    <section>
+      <h2><i class="bi bi-cloud-download"></i> usar vivo Free</h2>
+      <a href="https://play.google.com/store/apps/details?id=com.movile.android.appsvivo" target="_blank" class="btn-free">
+        <i class="bi bi-box-arrow-up-right"></i> Baixar vivo Free
+      </a>
+      <p>Abra, vá em "Usar Código" e insira: <span class="copyable" data-copy="67F25DFEC4">67F25DFEC4</span>. Ganhe 50 MB, ative/desative modo avião e conecte via GCLOUD & SECURITY.</p>
+    </section>
+    <section>
+      <h2><i class="bi bi-wallet2"></i> Pacotes Vivo Oficiais</h2>
+      <ul>
+        <li>Vivo Turbo 30 dias (R$20/mês)</li>
+        <li>Vivo Easy Prime</li>
+        <li>Vivo Controle</li>
+      </ul>
+      <p>Após ativar, use as opções VIVO FLARE no app VPN.</p>
+    </section>
+    <section>
+      <h2><i class="bi bi-globe"></i> Outras Operadoras</h2>
+      <p><strong>Claro:</strong> Flex, Mix ou Controle.<br>
+         <strong>TIM:</strong> teste chip sem cadastro ou saldo expirado.</p>
+    </section>
+    <footer>Se nada funcionar, tente Wi-Fi. Conectou via Wi-Fi? Problema da operadora.<br>© MisterVPN 2019-2025</footer>
+  </div>
+  <script>
+    document.querySelectorAll('.copyable').forEach(el =>
+      el.addEventListener('click', () => navigator.clipboard.writeText(el.dataset.copy))
+    );
+  </script>
+</body>
+</html>
